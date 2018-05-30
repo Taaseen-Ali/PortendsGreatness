@@ -70,9 +70,10 @@ LESSONS LEARNED
 ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
 
 
-yyyy-mm-dd
+2018-5-29
 --------------------------------------------------------------
-<Member> :: <Thing member did.>
-<Member> :: <Thing member did.>
-<Member> :: <Thing member did.>
+Richard :: aided in proposal writing
+Taaseen :: aided in proposal writing
+Eddie :: aided in proposal writing
+
 ==============================================================
