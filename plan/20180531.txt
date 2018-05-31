@@ -1,0 +1,14 @@
+2018-05-31
+-
+-Crucial Jobs:
+-  -creating basics skeleton of games
+-  - filling out all necesarry classes
+-Core Components:
+-  - at this stage, everything in listed under crucial jobs (Board, Player, Launcher, Brick, Ball classes)
+-Pre-req Components
+-  - Ball (pre req for Launcher)
+-  - Launcher (pre req for board and Player)
+-Collaboration Goals:
+-  -most of the bare-bones structural aspects of the class writing should be done together as a group for now
+-General Timeline:
+-  By 20180531 most strctural stuff should be complete.
