@@ -1,10 +1,14 @@
 2018-05-31
 
-Plan directory will hold your plans for realizing your goals, with each new draft named for its born day, in the format shown. 
-Each new draft of your plan should address prioritization, workload sharing, and chronology:
-
-Which jobs are most crucial?
-Which components constitute core functionality (vs non-essential)?
-Which components are prerequisites for others?
-Which tasks can be delegated, and which must be collaboratively tackled?
-What is the timeline, and how does it accommodate setbacks, course changes?
+Crucial Jobs:
+  -creating basics skeleton of games
+  - filling out all necesarry classes
+Core Components:
+  - at this stage, everything in listed under crucial jobs (Board, Player, Launcher, Brick, Ball classes)
+Pre-req Components
+  - Ball (pre req for Launcher)
+  - Launcher (pre req for board and Player)
+Collaboration Goals:
+  -most of the bare-bones structural aspects of the class writing should be done together as a group for now
+General Timeline:
+  By 20180531 most strctural stuff should be complete.
