@@ -1,0 +1,22 @@
+2018-06-04
+
+- Crucial Jobs:
+- - Creating algorithms for how the balls will move
+- - Creating algorithms for how the blocks will interact with balls
+- - Finishing the necessary classes
+
+- Core Components:
+- - Incorporate linked lists into the board
+- - Incorporate a stack into the collection of balls
+- - Establish the interaction between blocks and balls, and blocks and other blocks
+
+- Pre-Requisites
+- - Pre-Requisites should be created and completed already
+
+- Collaboration Goals:
+- - Most of the components should be done as a group, since all classes are linked in one way or another.
+
+- Timeline:
+- - Basic structure of the program should be completed with classes connected to one another
+- - Algorithms should be fully developed and working by 2018-06-06
+- - Full program should be completed by 2018-06-07

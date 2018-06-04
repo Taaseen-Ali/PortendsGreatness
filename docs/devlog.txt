@@ -69,11 +69,26 @@ LESSONS LEARNED
 ==============================================================
 ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
 
-
-2018-5-29
 --------------------------------------------------------------
+2018-5-29
+
 Richard :: aided in proposal writing
 Taaseen :: aided in proposal writing
 Eddie :: aided in proposal writing
+--------------------------------------------------------------
+2018-5-31
+
+Richard :: aided in completing basic structure of code
+Taaseen :: aided in completing basic structure of code
+Eddie :: aided in completing basic structure of code
+--------------------------------------------------------------
+2018-6-01
+
+Richard :: aided in completing basic ball mechanics
+Eddie :: aided in completing basic ball mechanics
+--------------------------------------------------------------
+
+
+
 
 ==============================================================
