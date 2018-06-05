@@ -63,6 +63,9 @@ public class Ball {
     else if (x < nextStart) {
       x += speed;
     }
+    if (Math.abs(x-nextStart) < speed){
+      x = nextStart;
+    }
   }
   
   void draw() {
