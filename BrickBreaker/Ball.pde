@@ -6,7 +6,7 @@ public class Ball {
     x = xpos;
     y = 500;
     xdir = ydir = 0;
-    speed = 5;
+    speed = 3;
     moving = false;
     board = world;
   }
@@ -96,8 +96,8 @@ public class Ball {
     else {
       tweenToNextStart();
     }
-    //println(x);
-   // println(y);
+    
+    fill(0, 0, 255);
     ellipse(x, y, 10, 10);
   }
 }

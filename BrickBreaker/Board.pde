@@ -10,7 +10,7 @@ public class Board {
       launcher.addBall();
     }
     // temporary
-    for (int i = 0; i < 5; i++) {
+    for (int i = 0; i < 30; i++) {
     placeBlock();
     }
   }
@@ -19,8 +19,8 @@ public class Board {
     for(int i = 0; i < bricks.size(); i++){
       Brick brick = bricks.get(i);
       if (brick.isActive()) {
-        if((b.getX() >= brick.getX()) && (b.getX()<= brick.getX() + 40)){
-          if((b.getY() >= brick.getY()) && (b.getY() <= brick.getY() + 25)){
+        if((b.getX() >= brick.getX()) && (b.getX()<= brick.getX() + 42)){
+          if((b.getY() >= brick.getY()) && (b.getY() <= brick.getY() + 27)){
             println("COLLIDED");
             brick.hit();
             return brick;
@@ -43,6 +43,7 @@ public class Board {
   }
 
   void placeBlock() {
-    bricks.add(new Brick((int)random(11)*40, (int) random(10)*25));
+    // size + 2
+    bricks.add(new Brick((int)random(9)*42, (int) random(10)*27));
   }
 }
