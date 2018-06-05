@@ -42,8 +42,12 @@ public class Launcher {
     allDone = tempAllDone;
   }
 
-  int[] getAngle(int x, int y) {
-    return new int[] {1, 1};
+  // ** not implemented yet
+  double[] getVectors(int x, int y) {
+    double hypotenuse = Math.sqrt(x * x + y * y);
+    double scale = (Math.sqrt(2) / hypotenuse);
+    double[] vectors = {(double) (x * scale), (double) (y * scale)};
+    return vectors;
   }
 
   void addBall() {
@@ -60,7 +64,8 @@ public class Launcher {
   }
 
   void unchamber() {
-    int[] vectors = getAngle(mouseX, mouseY);
+    double[] vectors = getVectors(mouseX, mouseY);
+    println(vectors[0], vectors[1]);
 
     Ball b = balls.get(chamberedBall);
     b.setX(lastX);  
