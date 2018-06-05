@@ -1,11 +1,11 @@
 import java.util.LinkedList;
 public class Launcher {
-  int lastX;
   LinkedList<Ball> balls;
-  boolean allDone;
   Board board;
-  boolean firing = false;
+  int lastX;
   int chamberedBall = 0;
+  boolean allDone = true;;
+  boolean unchamber = false;
 
   Launcher(Board b) {
     lastX = 200;
@@ -15,12 +15,21 @@ public class Launcher {
   }
 
   void draw() {
-    if(firing) firing();
+    // determines if all balls are done without affecting actual allDone
+    boolean tempAllDone = true;
+    if(unchamber) unchamber();
     for (Ball b : balls) {
       b.draw();
-      if (!b.moving() && lastX == -1)
+      if (!b.moving() && lastX == -1){
         lastX = b.getX();
+      }
+      // if a ball is moving, balls are not done
+      else if (b.moving()) {
+        tempAllDone = false;
+      }
     }
+    // set actual boolean equal to temp
+    allDone = tempAllDone;
   }
 
   int[] getAngle(int x, int y) {
@@ -31,12 +40,16 @@ public class Launcher {
     balls.add(new Ball(lastX, board));
   }
 
-  void fire() { 
-    firing = true;
-    chamberedBall = 0;
+  void fire() {
+    // mouse debounce
+    if (allDone) {
+      allDone = false;
+      unchamber = true;
+      chamberedBall = 0;
+    }
   }
 
-  void firing() {
+  void unchamber() {
     int[] vectors = getAngle(mouseX, mouseY);
 
     Ball b = balls.get(chamberedBall);
@@ -46,7 +59,8 @@ public class Launcher {
       b.setXDir(1);
       b.setYDir(1);
       chamberedBall++;
-    } else {
+    } 
+    else {
       Ball prev = balls.get(chamberedBall-1);
       if (dist(prev.getX(), prev.getY(), b.getX(), b.getY()) >= 15) {
         b.setMoving(true);
@@ -55,7 +69,7 @@ public class Launcher {
         chamberedBall++;
       }
       if(chamberedBall==balls.size()){
-        firing = false;
+        unchamber = false;
         lastX = -1;
       }
       //b.setDirX(vectors[0]);
