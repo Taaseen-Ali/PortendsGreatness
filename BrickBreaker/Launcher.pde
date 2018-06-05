@@ -24,13 +24,16 @@ public class Launcher {
     for (Ball b : balls) {
       b.draw();
       
+      if (lastX > -1) {
+        b.setStart(lastX);
+      }
       // determines first ball to return
       if (!b.moving() && lastX == -1){
         lastX = b.getX();
       }
       
       // if a ball is moving, balls are not done
-      else if (b.moving()) {
+      else if (b.moving() || !b.ready()) {
         tempAllDone = false;
       }
     }

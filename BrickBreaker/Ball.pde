@@ -1,5 +1,5 @@
 public class Ball {
-  int x, y, xdir, ydir, speed;
+  int x, y, xdir, ydir, speed, nextStart;
   boolean moving;
   Board board;
   public Ball(int xpos, Board world) {
@@ -44,10 +44,27 @@ public class Ball {
     moving = b;
   }
 
+  void setStart(int s){
+    nextStart = s;
+  }
+
   boolean moving() {
     return moving;
   }
+  
+  boolean ready() {
+    return x == nextStart;
+  }
 
+  void tweenToNextStart() {
+    if (x > nextStart) {
+      x -= speed;
+    }
+    else if (x < nextStart) {
+      x += speed;
+    }
+  }
+  
   void draw() {
     if (getX()>400) {
       setXDir(-getXDir());
@@ -72,6 +89,9 @@ public class Ball {
         setXDir(vectors[0]);
         setYDir(vectors[1]);
       }
+    }
+    else {
+      tweenToNextStart();
     }
     //println(x);
    // println(y);
