@@ -16,9 +16,10 @@ public class Brick {
   }
   void draw() {
     if (hitsLeft > 0) {
+      fill(255);
       rect(x, y, 40, 25);
-      // rectangle overlaps it however?
-      text(hitsLeft, x + 20, y + 10);
+      fill(0);
+      text(hitsLeft + "", x + 20 - textWidth((""+hitsLeft)) / 2, y + 12.5);
     }
   }
   
