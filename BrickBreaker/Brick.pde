@@ -1,9 +1,11 @@
 public class Brick {
-  int x, y, red;
+  int x, y, red, hitsLeft;
   Brick(int xpos, int ypos) {
     x = xpos;
     y = ypos;
     red = 255;
+    // temporary
+    hitsLeft = 10;
   }
 
   int getX() {
@@ -13,9 +15,21 @@ public class Brick {
     return y;
   }
   void draw() {
-    rect(x, y, 40, 25);
+    if (hitsLeft > 0) {
+      rect(x, y, 40, 25);
+      // rectangle overlaps it however?
+      text(hitsLeft, x + 20, y + 10);
+    }
   }
-
+  
+  void hit() {
+    hitsLeft -= 1;
+  }
+  
+  boolean isActive() {
+    return hitsLeft > 0;
+  }
+   
   int[] getExitVectors(Ball b) {
     int[] ret = new int[2];
     if (b.getX()> x && b.getX() < x + 40) {

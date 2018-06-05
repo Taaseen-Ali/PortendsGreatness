@@ -17,17 +17,24 @@ public class Launcher {
   void draw() {
     // determines if all balls are done without affecting actual allDone
     boolean tempAllDone = true;
-    if(unchamber) unchamber();
+    
+    if (unchamber) unchamber();
+    
+    // draws each ball and determines state
     for (Ball b : balls) {
       b.draw();
+      
+      // determines first ball to return
       if (!b.moving() && lastX == -1){
         lastX = b.getX();
       }
+      
       // if a ball is moving, balls are not done
       else if (b.moving()) {
         tempAllDone = false;
       }
     }
+    
     // set actual boolean equal to temp
     allDone = tempAllDone;
   }
