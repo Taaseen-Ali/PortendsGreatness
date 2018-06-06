@@ -1,0 +1,56 @@
+2018-06-06
+
+- Crucial Jobs:
+
+- - Creating algorithms for how the balls will move
+- - - Implementing the getVectors function so that launchers can move the ball in different directions based off user input
+- - - This should affect hat direction the ball moves in, and how it bounces off walls (calculated based on vectors using pixels)
+- - - Ball interaction with the wall (bouncing)
+- - - Ball interaction with the floor (sticking)
+- - - Releasing chain of balls 
+- - - Special balls (powerups)
+
+- - Finishing the necessary classes
+- - - Ball
+- - - Board (displays collection of bricks, controls the bouncing of the balls on the walls/floor)
+- - - Brick
+- - - BrickBreaker (runs whole game)
+- - - Launcher (contains collection of balls and shooting mechanisms)
+
+- Core Components: implementing term 2 concepts by adding these mechanics
+
+- - Incorporate linked lists into the board
+- - - blocks will be linked to four directions, up down left and right
+- - - blocks linked to blocks with the same color attribute will destroy the linked one. All adjacent blocks of same color will be destroyed if one of them is hit
+
+- - Incorporate a stack into the collection of balls
+- - - Determine which ball to release, how many balls you have in total
+- - Establish the interaction between blocks and balls, and blocks and other blocks
+- - - Balls destroy blocks on contact
+- - - Blocks connected to a block of the same color being destroyed will be destroyed
+
+- - Continuous rounds of play (when one round ends, the player advances to the next level)
+- - - Levels increasing should lead to increase in the number of hits it takes to break a brick
+- - - The total number of balls the player has increases
+
+- - Creating a more user-friendly interface
+- - - Adding buttons to end the game or restart the game
+- - - Having the balls displayed in a queue where the type of ball is easily visible (normal or powerup)
+- - - Possibly Allowing player to see where their launcher is aiming with a tracer
+- - - Adding different settings for difficulty (possibly more difficult levels would have less balls available to use, or more blocks to destroy)
+
+- Pre-Requisites:
+- - The basic ball class should be completed in order to implement a collection of them using a queue
+- - Also should be completed to add powerup balls afterwards
+- - The basic grid of blocks on the board should be completed in order to implement node linkage
+- - The basic block class should be completed before special power up blocks are added that release special power up balls
+
+- Collaboration Goals:
+- - Most of the components should be done as a group, since all classes are linked in one way or another.
+
+- Timeline:
+- - Basic structure of the program should be completed with classes connected to one another
+- - Ball movement Algorithms should be fully developed and working by 2018-06-06
+- - Block interaction should be completed and working by the end of 2018=06=06
+- - Full program should be completed by 2018-06-07
+- - Gives leeway for polishing up program on 2018-06-08 or solving any issues that occurred.
