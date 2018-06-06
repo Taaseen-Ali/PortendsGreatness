@@ -1,0 +1,45 @@
+2018-06-06
+
+- Crucial Jobs:
+
+- - Creating algorithms for how the balls will move
+- - - What direction the ball moves in
+- - - Ball interaction with the wall (bouncing)
+- - - Ball interaction with the floor (sticking)
+- - - Releasing chain of balls 
+- - - Special balls (powerups)
+
+- - Creating algorithms for how the blocks will interact with balls
+- - - Block being broken when hit by a ball
+
+- - Finishing the necessary classes
+- - - Ball
+- - - Board
+- - - Brick
+- - - BrickBreaker
+- - - Launcher
+
+- Core Components:
+
+- - Incorporate linked lists into the board
+- - - blocks will be linked to four directions, up down left and right
+- - - blocks linked to blocks with the same color attribute will destroy the linked one. All adjacent blocks of same color will be destroyed if one of them is hit
+
+- - Incorporate a stack into the collection of balls
+- - - Determine which ball to release, how many balls you have in total
+- - Establish the interaction between blocks and balls, and blocks and other blocks
+- - - Balls destroy blocks on contact
+- - - Blocks connected to a block of the same color being destroyed will be destroyed
+
+- Pre-Requisites:
+- - Pre-Requisites should be created and completed already (All the classes which are reliant on eachother)
+
+- Collaboration Goals:
+- - Most of the components should be done as a group, since all classes are linked in one way or another.
+
+- Timeline:
+- - Basic structure of the program should be completed with classes connected to one another
+- - Ball movement Algorithms should be fully developed and working by 2018-06-06
+- - Block interaction should be completed and working by the end of 2018=06=06
+- - Full program should be completed by 2018-06-07
+- - Gives leeway for polishing up program on 2018-06-08 or solving any issues that occurred.
