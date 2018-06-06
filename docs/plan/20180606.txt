@@ -10,9 +10,6 @@
 - - - Releasing chain of balls 
 - - - Special balls (powerups)
 
-- - Creating algorithms for how the blocks will interact with balls
-- - - Block being broken when hit by a ball
-
 - - Finishing the necessary classes
 - - - Ball
 - - - Board (displays collection of bricks, controls the bouncing of the balls on the walls/floor)
