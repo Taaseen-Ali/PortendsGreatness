@@ -87,7 +87,10 @@ Eddie :: aided in completing basic structure of code
 Richard :: aided in completing basic ball mechanics
 Eddie :: aided in completing basic ball mechanics
 --------------------------------------------------------------
+2018-06-05
 
+Richard :: completed firing debounce, brick hit counter and removal, ball animation after cycle completion, vector calculation template
+Taaseen :: completed ball unchambering from launcher, collision detection between balls and bricks, physics after collision
 
 
 
