@@ -15,6 +15,9 @@ public class Board {
     }
   }
   
+  // iterates through each brick to see if ball is colliding
+  // if so, brick's hit counter is changed
+  // BUG: sometimes collision is not detected
   Brick hasCollided(Ball b){
     for(int i = 0; i < bricks.size(); i++){
       Brick brick = bricks.get(i);
@@ -37,11 +40,13 @@ public class Board {
     }
     launcher.draw();
   }
-
+  
+  // calls fire function in launcher
   void mouseClick() {
     launcher.fire();
   }
 
+  // randomly places block
   void placeBlock() {
     // size + 2
     bricks.add(new Brick((int)random(9)*42, (int) random(10)*27));
