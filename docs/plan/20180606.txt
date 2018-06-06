@@ -5,10 +5,8 @@
 - - Creating algorithms for how the balls will move
 - - - Implementing the getVectors function so that launchers can move the ball in different directions based off user input
 - - - This should affect hat direction the ball moves in, and how it bounces off walls (calculated based on vectors using pixels)
-- - - Ball interaction with the wall (bouncing)
-- - - Ball interaction with the floor (sticking)
 - - - Releasing chain of balls 
-- - - Special balls (powerups)
+- - - Special balls (powerups that count as multiple hits to a block, bounces more, etc.)
 
 - - Finishing the necessary classes
 - - - Ball
@@ -26,7 +24,6 @@
 - - Incorporate a stack into the collection of balls
 - - - Determine which ball to release, how many balls you have in total
 - - Establish the interaction between blocks and balls, and blocks and other blocks
-- - - Balls destroy blocks on contact
 - - - Blocks connected to a block of the same color being destroyed will be destroyed
 
 - - Continuous rounds of play (when one round ends, the player advances to the next level)
