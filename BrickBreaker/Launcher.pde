@@ -55,9 +55,12 @@ public class Launcher {
   }
   
   float[] getVectors() {
-    float x = (mx-nextStart)/(500-my);
-    float y = 1;
-    return new float[] {x, y};
+    float x = mx-nextStart;
+    float y = 500-my;
+    float hypotenuse = (float) Math.sqrt(x * x + y * y);
+    float scale = ((float) Math.sqrt(2) / hypotenuse);
+    float[] vectors = {(x * scale), (y * scale)};
+    return vectors;
   }
 
   void addBall() {
