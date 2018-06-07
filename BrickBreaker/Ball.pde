@@ -102,7 +102,7 @@ public class Ball {
       // detects collision and changes ball direction
       // BUG: ball sometimes phases through brick
       // FIX: getExitVectors
-      Brick collision = board.hasCollided(this);
+      Brick collision = board.brickCollided(this);
       if(collision!= null){
         float[] vectors = collision.getExitVectors(this);
         setXDir(vectors[0]);
@@ -114,6 +114,15 @@ public class Ball {
     else {
       tweenToNextStart();
     }
+   
+    int ballNum = board.ballCollided(this);
+    if(ballNum!=-1){
+      board.launcher.addNewBall();
+      board.balls.remove(ballNum);
+      System.out.println("dskljkjgdsgh");
+    }
+   
+
     
     // draws the ball
     fill(0, 0, 255);

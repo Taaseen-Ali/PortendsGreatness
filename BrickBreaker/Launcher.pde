@@ -3,8 +3,8 @@ public class Launcher {
   LinkedList<Ball> balls;
   Board board;
   float nextStart;
-  int chamberedBall, brickShifts;
-  boolean allDone, unchamber, needsReset;
+  int chamberedBall, brickShifts, numNewBalls;
+  boolean allDone, unchamber, needsReset, newBall;
   float mx= mouseX;
   float my= mouseY;
 
@@ -12,10 +12,11 @@ public class Launcher {
     balls = new LinkedList<Ball>();
     board = b;
     nextStart = 200;
-    chamberedBall = brickShifts = 0;
+    numNewBalls = chamberedBall = brickShifts = 0;
     allDone = true;
     unchamber = false;
     needsReset = false;
+    newBall = false;
   }
 
   void draw() {
@@ -23,14 +24,20 @@ public class Launcher {
     boolean tempAllDone = true;
     // unchambers balls if they are chambered
     if (unchamber) unchamber();
-    if(needsReset&&allDone){
+    if (needsReset&&allDone) {
       board.shiftDown();
       brickShifts++;
-      if(brickShifts==25){
+      if (brickShifts==25) {
         needsReset = false;
         brickShifts = 0;
         board.placeBlocks();
+        board.placeBall();
         board.incrementLevel();
+      }
+      if (newBall) {
+        addBall(numNewBalls);
+        newBall = false;
+        numNewBalls = 0;
       }
     }
     // draws each ball and determines state
@@ -54,7 +61,7 @@ public class Launcher {
     // set actual boolean equal to temp
     allDone = tempAllDone;
   }
-  
+
   float[] getVectors() {
     float x = mx-nextStart;
     float y = 500-my;
@@ -68,6 +75,15 @@ public class Launcher {
     balls.add(new Ball(nextStart, board));
   }
 
+  void addBall(int num) {
+    for (int i=0; i<num; i++)
+      balls.add(new Ball(nextStart, board));
+  }
+
+  void addNewBall() {
+    newBall = true;
+    numNewBalls++;
+  }
   // fires balls if not fired
   void fire() {
     // mouse debounce
@@ -82,7 +98,6 @@ public class Launcher {
   }
 
   void reset() {
-    
   }  
 
   // unloads each ball one at a time
