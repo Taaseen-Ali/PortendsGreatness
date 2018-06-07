@@ -53,10 +53,10 @@ public class Brick {
   // returns the change to make after ball collides with brick
   float[] getExitVectors(Ball b) {
     float[] ret = new float[2];
-    if (b.getX()+4 > x && b.getX()-4 < x + 40) {
+    if (b.getX()+5 >= x && b.getX()-5 <= x + 40) {
       ret[0] = b.getXDir();
       ret[1] = -b.getYDir();
-    }else if(b.getY()+5 > y && b.getY()-5 < y+25){
+    }else if(b.getY()+5 >= y && b.getY()-5 <= y+25){
       ret[0] = -b.getXDir();
       ret[1] = b.getYDir();
     }
