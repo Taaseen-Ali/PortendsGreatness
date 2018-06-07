@@ -31,7 +31,7 @@ public class Launcher {
         needsReset = false;
         brickShifts = 0;
         board.placeBlocks();
-        if (board.level>10) board.placeBlocks();
+        if (board.level>5) board.placeBlocks();
         board.placeBall();
         board.incrementLevel();
       }

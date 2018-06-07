@@ -80,7 +80,7 @@ public class Board {
   void shiftDown() {
     for (Brick b : bricks) {
       b.setY(b.getY()+1);
-      if (b.getY() >= 300) {
+      if (b.getY()+25 >= 300) {
         gameOver = true;
       }
     }
