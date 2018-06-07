@@ -7,19 +7,19 @@ public class Brick {
     this.maxHits = maxHits;
     hitsLeft = maxHits;
   }
-  
+
   void draw() {
     if (hitsLeft > 0) {
       // front
-     // noStroke();
+      // noStroke();
       //fill(180);
       //rect(x+2, y+2, 40, 25);
-      
+
       // shadow of the brick (aesthetic)
       noStroke();
       fill(255);
       rect(x, y, 40, 25);
-      
+
       // displays hits needed
       fill(0);
       text(hitsLeft + "", x + 20 - textWidth((""+hitsLeft)) / 2, y + 12.5);
@@ -32,15 +32,15 @@ public class Brick {
   int getY() {
     return y;
   }
-  
-  void setX(int xpos){
+
+  void setX(int xpos) {
     x = xpos;
   }
-  
-  void setY(int ypos){
+
+  void setY(int ypos) {
     y = ypos;
   }
-  
+
   // checks if brick is alive
   boolean isActive() {
     return hitsLeft > 0;
@@ -49,16 +49,19 @@ public class Brick {
   void hit() {
     hitsLeft -= 1;
   }
-   
+
   // returns the change to make after ball collides with brick
   float[] getExitVectors(Ball b) {
     float[] ret = new float[2];
-    if (b.getX()+5 > x && b.getX()-5 < x + 40) {
+    if (b.getX()+4 >= x && b.getX()-4 <= x + 40) {
       ret[0] = b.getXDir();
       ret[1] = -b.getYDir();
-    }else if(b.getY()+5 >= y && b.getY()-5 <= y+25){
+    } else if (b.getY()+4 >= y && b.getY()-4 <= y+25) {
       ret[0] = -b.getXDir();
       ret[1] = b.getYDir();
+    } else {
+      ret[0] =-b.getXDir();
+      ret[1] = -b.getYDir();
     }
     return ret;
   }
