@@ -2,36 +2,34 @@ import java.util.LinkedList;
 public class Launcher {
   LinkedList<Ball> balls;
   Board board;
-  int nextStart, chamberedBall;
-  boolean allDone, unchamber;
+  float lastX;
+  int chamberedBall = 0;
+  boolean allDone = true;;
+  boolean unchamber = false;
 
   Launcher(Board b) {
+    lastX = 200;
     balls = new LinkedList<Ball>();
-    board = b;
-    nextStart = 200;
-    chamberedBall = 0;
     allDone = true;
-    unchamber = false;
+    board = b;
   }
 
   void draw() {
     // determines if all balls are done without affecting actual allDone
     boolean tempAllDone = true;
     
-    // unchambers balls if they are chambered
     if (unchamber) unchamber();
     
     // draws each ball and determines state
     for (Ball b : balls) {
       b.draw();
       
-      // if nextStartPosition is found, set each balls start position
-      if (nextStart > -1) {
-        b.setStart(nextStart);
+      if (lastX > -1) {
+        b.setStart(lastX);
       }
       // determines first ball to return
-      if (!b.moving() && nextStart == -1){
-        nextStart = b.getX();
+      if (!b.moving() && lastX == -1){
+        lastX = b.getX();
       }
       
       // if a ball is moving, balls are not done
@@ -45,19 +43,20 @@ public class Launcher {
   }
 
   // ** not implemented yet
-  // NEXT STEP: generate vectors based off of (200,500) 
-  double[] getVectors(int x, int y) {
-    double hypotenuse = Math.sqrt(x * x + y * y);
-    double scale = (Math.sqrt(2) / hypotenuse);
-    double[] vectors = {(double) (x * scale), (double) (y * scale)};
+  float[] getVectors(int mx, int my) {
+    float x = mx - lastX;
+    float y = my;
+    float slope = my/mx;
+    float hypotenuse = (float) Math.sqrt(x * x + y * y);
+    float scale = (float) (Math.sqrt(2) / hypotenuse);
+    float[] vectors = {1.0/slope, 1};
     return vectors;
   }
 
   void addBall() {
-    balls.add(new Ball(nextStart, board));
+    balls.add(new Ball(lastX, board));
   }
 
-  // fires balls if not fired
   void fire() {
     // mouse debounce
     if (allDone) {
@@ -67,32 +66,29 @@ public class Launcher {
     }
   }
 
-  // unloads each ball one at a time
   void unchamber() {
-    double[] vectors = getVectors(mouseX, mouseY);
+    float[] vectors = getVectors(mouseX, mouseY);
     println(vectors[0], vectors[1]);
 
     Ball b = balls.get(chamberedBall);
-    b.setX(nextStart);  
+    b.setX(lastX);  
     if (chamberedBall==0) {
       b.setMoving(true);
-      // NEXT STEP: utilize getVectors
-      b.setXDir(1);
-      b.setYDir(1);
+      b.setXDir(vectors[0]);
+      b.setYDir(vectors[1]);
       chamberedBall++;
     } 
     else {
       Ball prev = balls.get(chamberedBall-1);
       if (dist(prev.getX(), prev.getY(), b.getX(), b.getY()) >= 15) {
         b.setMoving(true);
-        // NEXT STEP: utilize getVectors
-        b.setXDir(1);
-        b.setYDir(1);
+        b.setXDir(vectors[0]);
+        b.setYDir(vectors[1]);
         chamberedBall++;
       }
       if(chamberedBall==balls.size()){
         unchamber = false;
-        nextStart = -1;
+        lastX = -1;
       }
       //b.setDirX(vectors[0]);
       //b.setDirY(vectors[1]);
@@ -102,7 +98,7 @@ public class Launcher {
 /*
     while(i<balls.size())
  Ball b = balls.get(i);
- b.setX(nextStart);
+ b.setX(lastX);
  b.setMoving(true);
  b.setXDir(1);
  b.setYDir(1);
