@@ -5,6 +5,7 @@ public class Board {
   Launcher launcher;
   int level, shifts;
   boolean shifting;
+  boolean gameOver;
 
   public Board() {
     shifting = true;
@@ -46,12 +47,11 @@ public class Board {
   int ballCollided(Ball b) {
     for (int i=0; i<balls.size(); i++) {
       BallPowerUp powerUp = balls.get(i);
-      if (dist(powerUp.getX(), powerUp.getY(), b.getX(), b.getY()) <=10){
+      if (dist(powerUp.getX(), powerUp.getY(), b.getX(), b.getY()) <=10) {
         return i;
       }
     }
     return -1;
-   
   }
 
   void incrementLevel() {
@@ -65,6 +65,11 @@ public class Board {
       b.draw();
     }
     launcher.draw();
+    if (gameOver) {
+      background(0, 0, 0);
+      textSize(26);
+      text("GAME OVER", 125, 150);
+    }
   }
 
   // calls fire function in launcher
@@ -75,7 +80,12 @@ public class Board {
   void shiftDown() {
     for (Brick b : bricks) {
       b.setY(b.getY()+1);
+      if (b.getY() >= 300) {
+        gameOver = true;
+      }
     }
+
+
 
     for (BallPowerUp b : balls) {
       b.setY(b.getY()+1);
