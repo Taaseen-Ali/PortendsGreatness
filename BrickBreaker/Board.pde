@@ -30,8 +30,8 @@ public class Board {
         bricks.remove(i);
         i--;
       }  
-      else if ((b.getX()+5 >= brick.getX()) && (b.getX()-5<= brick.getX() + 42)) {
-        if ((b.getY()+5 >= brick.getY()) && (b.getY()-5 <= brick.getY() + 27)) {
+      else if ((b.getX()+5 >= brick.getX()) && (b.getX()-5<= brick.getX() + 40)) {
+        if ((b.getY()+5 >= brick.getY()) && (b.getY()-5 <= brick.getY() + 25)) {
           println("COLLIDED");
           brick.hit();
           return brick;

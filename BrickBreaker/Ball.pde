@@ -6,7 +6,7 @@ public class Ball {
     x = xpos;
     y = 500;
     xdir = ydir = 0;
-    speed = 1.5;
+    speed = 3;
     nextStart = -1;
     moving = false;
     board = world;
