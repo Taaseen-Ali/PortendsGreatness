@@ -31,6 +31,7 @@ public class Launcher {
         needsReset = false;
         brickShifts = 0;
         board.placeBlocks();
+        if (board.level>10) board.placeBlocks();
         board.placeBall();
         board.incrementLevel();
       }
@@ -64,7 +65,7 @@ public class Launcher {
 
   float[] getVectors() {
     float x = mx-nextStart;
-    float y = 500-my;
+    float y = 300-my;
     float hypotenuse = (float) Math.sqrt(x * x + y * y);
     float scale = ((float) Math.sqrt(2) / hypotenuse);
     float[] vectors = {(x * scale), (y * scale)};

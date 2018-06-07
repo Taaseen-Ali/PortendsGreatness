@@ -105,7 +105,7 @@ public class Board {
     for (Brick b : bricks) {
       if (b.getX()==x && b.getY()==0) {
         System.out.println(x);
-        placeBlock();
+        placeBall();
         return;
       }
     }

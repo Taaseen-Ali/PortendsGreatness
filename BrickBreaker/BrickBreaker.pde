@@ -6,7 +6,7 @@ int level;
 // currently the board is set up for 1 cycle of bricks
 // NEXT STEP: allow for continuous rounds of play
 void setup() {
-  size(400, 500);      
+  size(400, 300);      
   board.setup();
 }
 
@@ -19,6 +19,6 @@ void mouseClicked(){
 // currently draws background and board
 // NEXT STEP: extra graphics that aid the user in understanding
 void draw() {
-  background(209);
+  background(255);
   board.draw();
 }

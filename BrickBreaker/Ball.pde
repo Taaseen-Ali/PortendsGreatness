@@ -4,7 +4,7 @@ public class Ball {
   Board board;
   public Ball(float xpos, Board world) {
     x = xpos;
-    y = 500;
+    y = 300;
     xdir = ydir = 0;
     speed = 3;
     nextStart = -1;
@@ -86,9 +86,9 @@ public class Ball {
     if (getX()<0) {
       setXDir(-getXDir());
     }
-    if (getY()>500) {
+    if (getY()>300) {
       setMoving(false);
-      setY(500);
+      setY(300);
     }
     if (getY()<0) {
       setYDir(-getYDir());
