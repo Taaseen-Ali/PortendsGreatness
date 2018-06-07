@@ -56,7 +56,7 @@ public class Brick {
     if (b.getX()+4 > x && b.getX()-4 < x + 40) {
       ret[0] = b.getXDir();
       ret[1] = -b.getYDir();
-    } if(b.getY()+5 > y && b.getY()-5 < y+25){
+    }else if(b.getY()+5 > y && b.getY()-5 < y+25){
       ret[0] = -b.getXDir();
       ret[1] = b.getYDir();
     }

@@ -60,7 +60,7 @@ public class Board {
   }
   // randomly places block
   void placeBlock() {
-    int x = (int)random(9)*42;
+    int x = (int)random(9)*40;
     for (Brick b : bricks) {
       if (b.getX()==x && b.getY()==0) {
         System.out.println(x);
