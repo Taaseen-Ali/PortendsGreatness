@@ -1,11 +1,29 @@
 public class Brick {
-  int x, y, red, hitsLeft;
-  Brick(int xpos, int ypos) {
+  int x, y, red, hitsLeft, maxHits;
+  Brick(int xpos, int ypos, int maxHits) {
     x = xpos;
     y = ypos;
     red = 255;
-    // temporary
-    hitsLeft = 10;
+    this.maxHits = maxHits;
+    hitsLeft = maxHits;
+  }
+  
+  void draw() {
+    if (hitsLeft > 0) {
+      // front
+      noStroke();
+      fill(180);
+      rect(x+2, y+2, 40, 25);
+      
+      // shadow of the brick (aesthetic)
+      noStroke();
+      fill(255);
+      rect(x, y, 40, 25);
+      
+      // displays hits needed
+      fill(0);
+      text(hitsLeft + "", x + 20 - textWidth((""+hitsLeft)) / 2, y + 12.5);
+    }
   }
 
   int getX() {
@@ -14,30 +32,25 @@ public class Brick {
   int getY() {
     return y;
   }
-  void draw() {
-    if (hitsLeft > 0) {
-      // front
-      noStroke();
-      fill(180);
-      rect(x+2, y+2, 40, 25);
-      // shadow
-      noStroke();
-      fill(255);
-      rect(x, y, 40, 25);
-      // text
-      fill(0);
-      text(hitsLeft + "", x + 20 - textWidth((""+hitsLeft)) / 2, y + 12.5);
-    }
+  
+  void setX(int xpos){
+    x = xpos;
   }
   
-  void hit() {
-    hitsLeft -= 1;
+  void setY(int ypos){
+    y = ypos;
   }
   
+  // checks if brick is alive
   boolean isActive() {
     return hitsLeft > 0;
   }
+  // reduces number of hits needed to break brick
+  void hit() {
+    hitsLeft -= 1;
+  }
    
+  // returns the change to make after ball collides with brick
   float[] getExitVectors(Ball b) {
     float[] ret = new float[2];
     if (b.getX()> x && b.getX() < x + 42) {
