@@ -8,6 +8,7 @@ public class Board {
   public Board() {
     shifting = true;
     shifts=0;
+    level=1;
     launcher = new Launcher(this);
     bricks = new ArrayList<Brick>();
   }
@@ -30,8 +31,8 @@ public class Board {
         bricks.remove(i);
         i--;
       }  
-      else if ((b.getX()+5 >= brick.getX()) && (b.getX()-5<= brick.getX() + 40)) {
-        if ((b.getY()+5 >= brick.getY()) && (b.getY()-5 <= brick.getY() + 25)) {
+      else if ((b.getX()+5 >= brick.getX()) && (b.getX()-5<= brick.getX() + 42)) {
+        if ((b.getY()+5 >= brick.getY()) && (b.getY()-5 <= brick.getY() + 27)) {
           println("COLLIDED");
           brick.hit();
           return brick;
@@ -40,7 +41,10 @@ public class Board {
     }
     return null;
   }
-
+  
+  void incrementLevel(){
+    level++;
+  }
   void draw() {
     for (Brick brick : bricks) {
       brick.draw();
@@ -68,7 +72,7 @@ public class Board {
         return;
       }
     }
-    bricks.add(new Brick(x, 0, 20));
+    bricks.add(new Brick(x, 0, level));
   }
 
   void placeBlocks() {

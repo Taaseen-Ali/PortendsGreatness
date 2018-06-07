@@ -17,7 +17,7 @@ public class Brick {
 
       // shadow of the brick (aesthetic)
       noStroke();
-      fill(255);
+      fill(255, 255*((maxHits-hitsLeft)/ (float)maxHits), 255*((maxHits-hitsLeft)/ (float)maxHits));
       rect(x, y, 40, 25);
 
       // displays hits needed

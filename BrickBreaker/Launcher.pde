@@ -30,6 +30,7 @@ public class Launcher {
         needsReset = false;
         brickShifts = 0;
         board.placeBlocks();
+        board.incrementLevel();
       }
     }
     // draws each ball and determines state
