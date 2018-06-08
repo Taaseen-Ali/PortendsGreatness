@@ -4,7 +4,7 @@ Taaseen Ali, Richard Wong, Eddie Zhu
 
 # Swipe Brick Breaker Clone
 
-## Overview
+## What You'll See
 
 - The board is created and the user is given one ball and a collection of bricks is displayed on the board. 
 - The user can aim the launcher and shoot the ball in the direction specified by their mouse placement.
