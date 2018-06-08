@@ -7,7 +7,7 @@ public class Board {
   boolean shifting;
   boolean gameOver;
 
-  public Board() {
+  public Board() { //sets up board class containing collections of bricks and balls
     shifting = true;
     shifts=0;
     level=1;
@@ -16,7 +16,7 @@ public class Board {
     balls = new ArrayList<BallPowerUp>();
   }
 
-  void setup() {
+  void setup() { //sets up the beginning screen, first level
     // temporary
     launcher.addBall();
     launcher.addBall();
@@ -26,7 +26,8 @@ public class Board {
 
   // iterates through each brick to see if ball is colliding
   // if so, brick's hit counter is changed
-  // BUG: sometimes collision is not detected
+  // if the coordinates of the ball intersects an edge of a brick, it is a collision
+
   Brick brickCollided(Ball b) {
     for (int i = 0; i < bricks.size(); i++) {
       Brick brick = bricks.get(i);
@@ -58,9 +59,11 @@ public class Board {
     level++;
   }
   void draw() {
+  // calls draw method from brick
     for (Brick brick : bricks) {
       brick.draw();
     }
+  // calls draw method from BallPowerUp
     for (BallPowerUp b : balls) {
       b.draw();
     }
@@ -77,16 +80,16 @@ public class Board {
     launcher.fire();
   }
 
+// shifts the bricks down after each launch
   void shiftDown() {
     for (Brick b : bricks) {
       b.setY(b.getY()+1);
+      //if a brick reaches the bottom of the screen, the endgame screen is launched
       if (b.getY()+25 >= 300) {
         gameOver = true;
       }
     }
-
-
-
+   // shifts the power up balls
     for (BallPowerUp b : balls) {
       b.setY(b.getY()+1);
     }
