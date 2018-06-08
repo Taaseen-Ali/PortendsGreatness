@@ -2,15 +2,15 @@
 
 Taaseen Ali, Richard Wong, Eddie Zhu
 
-# Brick Breaker
+# Swipe Brick Breaker Clone
 
-## Presents
+## Overview
 
 - The board is created and the user is given one ball and a collection of bricks is displayed on the board. 
 - The user can aim the launcher and shoot the ball in the direction specified by their mouse placement.
 - Bricks are visible at the top of the screen, and shift down as levels progress.
-- The number of hits it takesk to destroy a brick is displayed on each brick.
-- Green balls are also created along with the bricks, and give the user more balls to launch. 
+- The number of hits it takes to destroy a brick is displayed on each brick.
+- Green balls are also created along with the brick giving the user the chance to collect more balls
 - When the bricks hit the bottom of the screen, the game is over. 
 
 ## Description
