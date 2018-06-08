@@ -2,7 +2,7 @@ public class Ball {
   float x, y, xdir, ydir, speed, nextStart;
   boolean moving;
   Board board;
-  public Ball(float xpos, Board world) {
+  public Ball(float xpos, Board world) { //sets up attributes for each individual ball 
     x = xpos;
     y = 300;
     xdir = ydir = 0;
@@ -94,7 +94,7 @@ public class Ball {
       setYDir(-getYDir());
     }
     
-    // deals with moving the ball
+    // deals with moving the ball by updating the coordinates based on its direction and speed
     if (moving) {
       x += xdir * speed;
       y -= ydir * speed;
