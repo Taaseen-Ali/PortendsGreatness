@@ -103,7 +103,7 @@ Richard :: updated UML
 --------------------------------------------------------------
 2018-6-07
 
-Richard :: Added vector scaling algorithm
+Richard :: Added vector scaling algorithm, worked on collision, added score tracker
 Eddie  :: Added endgame mechanic, worked on collision, debugged typing of objects
 Taaseen :: Edited size of board, added difficulty increase, new balls and colors, worked on collisions
 
