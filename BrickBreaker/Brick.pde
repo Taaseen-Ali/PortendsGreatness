@@ -1,6 +1,6 @@
 public class Brick {
   int x, y, red, hitsLeft, maxHits;
-  Brick(int xpos, int ypos, int maxHits) {
+  Brick(int xpos, int ypos, int maxHits) { //sets up attributes for each individual brick
     x = xpos;
     y = ypos;
     red = 255;
