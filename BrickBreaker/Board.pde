@@ -3,7 +3,7 @@ public class Board {
   ArrayList<Brick> bricks;
   ArrayList<BallPowerUp> balls;
   Launcher launcher;
-  int level, shifts;
+  int level, shifts, score;
   boolean shifting;
   boolean gameOver;
 
@@ -38,6 +38,7 @@ public class Board {
         if ((b.getY()+5 >= brick.getY()) && (b.getY()-5 <= brick.getY() + 27)) {
           println("COLLIDED");
           brick.hit();
+          score++;
           return brick;
         }
       }
@@ -59,6 +60,9 @@ public class Board {
     level++;
   }
   void draw() {
+    fill(0);
+    rect(0,305,400,2);
+    text("SCORE: " + score, 200 - textWidth(("SCORE: " + score))/2, 330);
   // calls draw method from brick
     for (Brick brick : bricks) {
       brick.draw();

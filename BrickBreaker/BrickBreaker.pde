@@ -6,7 +6,7 @@ int level;
 // currently the board is set up for 1 cycle of bricks
 // NEXT STEP: allow for continuous rounds of play
 void setup() {
-  size(400, 300);      
+  size(400, 400);      
   board.setup();
 }
 
