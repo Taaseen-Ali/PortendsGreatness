@@ -92,6 +92,22 @@ Eddie :: aided in completing basic ball mechanics
 Richard :: completed firing debounce, brick hit counter and removal, ball animation after cycle completion, vector calculation template
 Taaseen :: completed ball unchambering from launcher, collision detection between balls and bricks, physics after collision
 
+--------------------------------------------------------------
+2018-6-06
+
+Richard :: updated UML
+
+--------------------------------------------------------------
+2018-6-07
+
+Richard :: Added vector scaling algorithm
+Eddie  :: Added endgame mechanic, worked on collision, debugged typing of objects
+Taaseen :: Edited size of board, added difficulty increase, new balls and colors, worked on collisions
+
+
+--------------------------------------------------------------
+
+
 
 
 ==============================================================
