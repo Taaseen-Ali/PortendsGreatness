@@ -11,15 +11,20 @@ Taaseen Ali, Richard Wong, Eddie Zhu
 - Bricks are visible at the top of the screen, and shift down as levels progress.
 - The number of hits it takesk to destroy a brick is displayed on each brick.
 - Green balls are also created along with the bricks, and give the user more balls to launch. 
+- When the bricks hit the bottom of the screen, the game is over. 
 
 ## Description
 
 - The board contains a set of bricks, and the bricks are placed randomly and can be adjacent to one another. 
 - Balls are given to the users, and the users can aim the ball to hit bricks and break them. 
-- Bricks can take multiple hits to be broken. 
+- Bricks can take multiple hits to be broken. Bricks have a counter on them that specify the number of hits they require to break, and each time a ball reaches the coordinates of the edge of a brick, the counter is decreased. 
 - Balls can bounce off walls, but once one ball hits the floor in a specific point, that point will the the starting point for the next launch. 
 - The movement of the balls are based off vector functions, which calculate their trajectory using pixels. 
-- Bricks spawn from the top as levels progress, and the number of hits it takes to  break each brick increases as well. 
+- Bricks spawn from the top as levels progress, and the number of hits it takes to  break each brick increases with each shift of the bricks. 
+- The launcher contains a linked list of balls, which dequeues a ball for it to be fired in the direction of the mouse coordinate specified by the user's mouse placement on the board. 
+- Hitting a green ball powerup will give the user an additional ball to use for the next launch and subsequent launches.
+- When the bottom brick's coordinates equals the coordinates of the bottom screen, the game is ended an and endgame screen is displayed. 
+
 
 ## Launch Instructions
 
