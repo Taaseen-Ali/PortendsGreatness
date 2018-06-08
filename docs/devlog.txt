@@ -32,28 +32,31 @@ Flesh out each category whenever necessary, appropriate.
 ------------------------------------------
 OBSTACLES OVERCOME
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-<Wow, we so BOSS bc...>
+- We were able to implement graphics into java coding
+- We were able to figure out the algorithms required for the traversing of balls based on mouse positionioning
+- Fixed bugs dealing with collision between balls and bricks
 
 UNRESOLVED ISSUES
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 <
-blah blah pesky bug...
-maybe some of these will move into the Obs.Ovrcm section...
+
 >
 
 COOL STUFF LEARNED
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-<wow! oo! etc!...>
+- The collision of things in games is really just calculations based off of pixels
+- Developing a game graphically requires manipulation of pixel values since there really isn't any method for calculating by angles
 
 MID-DEVELOPMENT DESIGN CHANGES
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-We changed ___ to ___ bc...
-<etc>
-<etc>
+- We decided to not implement breaking multiple bricks adjacent to one another because not enough bricks spawn for this aspect of gameplay.
+- We decided to give powerup balls instead of powerup bricks because it made more sense to seperate the two objectives of the game, breaking bricks and collecting balls
+- We changed the goal of the game from clearing seperate stages of bricks before new ones are spawned to preventing the bricks from hitting the bottom of the screen because it worked better with how Processing handles classes
 
 LESSONS LEARNED
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-<tales of wisdom gained...>
+- Make sure that the program is built around fundamental requirements rather than build a program and then try to squeeze in the requirements afterwards.
+- Make sure to give some leeway before the deadline due to unpredictable circumstances
 ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
 ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
 ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
